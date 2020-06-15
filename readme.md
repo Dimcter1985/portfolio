@@ -13,8 +13,8 @@
 * Git
 * Yarn
 
-## [Посмотреть сайт]()
-![portfolio]()yarn
+## [Посмотреть сайт](https://dimcter1985.github.io/portfolio/dist/)
+![portfolio](src/images/content/screenshot.jpg)
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/), а так же
 [последняя версия Yarn](https://yarnpkg.com/ru/docs/install)
