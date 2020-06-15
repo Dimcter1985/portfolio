@@ -1,0 +1,261 @@
+.reviews {
+    margin-bottom: 192px;
+
+    @include tablets {
+        margin-bottom: 83px;
+    }  
+
+    &__container {
+        padding-top: 137px;
+        display: block;
+
+        @include desktop {
+            padding: 137px 0 0 30px;
+        }
+        
+        @include tablets {
+            padding: 125px 0 0 20px;
+        }
+        
+        @include phones {
+            padding: 100px 0;
+        }
+
+        @include Iphone {
+            padding: 50px 0;
+        }
+    } 
+    
+    &__title {
+        margin-bottom: 90px;
+        margin-right: 95px;
+
+        @include tablets {
+            font-size: 2rem;
+            margin-bottom: 63px;
+        }
+        
+        @include phones {
+            text-align: left;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+    }
+    
+    &__header {
+        display: flex;
+
+        @include phones {
+            display: block;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__button {
+        display: flex;
+        z-index: 1;
+        @include phones {
+            justify-content: center;
+        }
+    }
+
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 2px solid $text-color;
+        margin-right: 25px;
+        outline: none;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            border-color: $content-color;
+            .arrow {
+                fill: $content-color;
+            }
+            &.disabled {
+                .arrow {
+                    fill: $grey-color;
+                }
+            }
+        }
+        &.disabled {
+            border-color: $grey-color;
+            cursor: auto;
+            .arrow {
+                fill: $grey-color;
+            }
+        }
+        
+    }  
+
+    &__list {
+        &:last-child {
+            margin-right: 0;
+        }
+        & .flickity-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            top: -53%;
+            left: 42%;
+            border-radius: 50%;
+            border: 1px solid $text-color;
+            background: transparent;
+            transition: $trans-hover;
+
+            @include desktop {
+                left: 53%;
+            }
+
+            @include tablets {
+                left: 59%;
+                top: -37%;
+            }
+
+            @include phones {
+                display: none;
+            }
+
+            @include phonesLand {
+                display: none;
+            } 
+
+            &:hover {
+                border-color: $content-color;
+                background-color: transparent;
+
+                .arrow {
+                    fill: $content-color;
+                }
+            }
+
+            .flickity-button-icon {
+                width: 15px;
+                height: 15px;
+                position: static;
+            }
+        }
+        & .flickity-prev-next-button.previous {
+            left: 37%;
+
+            @include desktop {
+                left: 46%;
+            }
+            
+            @include tablets {
+                left: 49%;
+            } 
+        }
+    }
+
+    &__slider {
+        position: relative;
+        z-index: 1;
+        width: 62.5rem;
+        overflow: hidden;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 124px;
+        margin-right: 65px;
+        width: 440px;
+        
+        &:before {
+            content: "";
+            position: absolute;
+            left: 28px;
+            width: 75px;
+            height: 63px;
+            background: svg-load('quote.svg', fill= $dark-grey-color, width=100%, height=100%);
+            background-repeat: no-repeat;
+
+            @include tablets {
+                width: 45px;
+                height: 33px;
+                left: 0;
+            }
+
+            @include phones {
+                width: 35px;
+                height: 23px;
+                left: -25px;
+            }
+        }
+
+        @include desktop {
+            margin-right: 35px;
+        }
+
+        @include tablets {
+            padding-left: 40px;
+            margin-right: 40px;
+            width: 320px;
+        }
+        
+        @include phones {
+            padding: 0;
+        }
+
+        @include Iphone {
+            width: 280px;
+        }
+    }
+}
+
+.review {
+    &__text {       
+        line-height: 30px;
+        margin-bottom: 26px;
+
+        @include tablets {
+            line-height: 25px;
+        }  
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+
+    &__avatar {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 25px;
+    }
+
+    &__photo {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-position: 0 10px;
+        transform: scale(1.7);
+    }
+
+    &__user_desc {
+        padding: 0 10px;
+
+        @include tablets {
+            padding: 0;
+        }  
+    }
+
+    &__user_fio {
+        margin-bottom: 14px;
+    }
+
+    &__user_fio {
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+}

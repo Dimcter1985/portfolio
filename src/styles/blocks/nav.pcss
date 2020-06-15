@@ -1,0 +1,31 @@
+.nav {
+    
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin-right: 60px;
+        opacity: 1;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include tablets {
+           margin-bottom: 18px;
+        }
+    }
+    
+    &__link {
+        padding: 10px 0 10px;
+        border-bottom: 1px solid transparent;
+        transition: $trans-hover; 
+
+        &:hover {
+            color: $content-color;
+            border-bottom-color: $content-color;
+            text-shadow: 2px 2px 2px $content-color; 
+        }
+    }
+}

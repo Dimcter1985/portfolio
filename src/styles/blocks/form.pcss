@@ -1,0 +1,213 @@
+.form {
+    &__container {
+        align-items: flex-start;
+        padding-bottom: 130px;
+
+        @include desktop {
+            padding-bottom: 70px;
+            padding-left: 30px;
+        }
+
+        @include phonesLand {
+            padding-bottom: 70px;
+            padding-left: 30px;
+        } 
+        
+        @include tablets {
+            padding: 0 25px 30px;
+        }
+        
+        @include phones {
+            padding: 0 0 30px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 125px;
+
+        @include tablets {
+            font-size: 2rem;
+            margin: 0 auto 88px; 
+        }  
+    }
+
+    &__box {
+        width: 1000px;
+
+        @include tablets {
+            width: 539px;
+        }
+        
+        @include phones {
+            width: 305px;
+        }
+
+        @include Iphone {
+            width: 272px;
+        }
+    }
+
+    &__col { 
+        flex: 1;
+        position: relative;
+        margin-right: 65px;
+
+        @include tablets {
+            margin-right: 20px;
+        }
+
+        @include phones {
+            margin-bottom: 100px;
+            margin-right: 0;
+        }
+        
+        &--btn {
+            @include tablets {
+                text-align: center;
+                margin-right: 0;
+            }
+        }      
+    }
+
+    &__row {
+        display: flex;
+        margin-bottom: 100px;
+
+        @include tablets {
+            margin-bottom: 87px;
+        }
+        
+        @include phones {
+            display: block;
+        }
+
+        &--textarea {
+            margin-bottom: 65px;
+
+            @include tablets {
+                margin-bottom: 33px;
+            }           
+        }
+    }
+
+    &__label {
+        &:hover {
+            .form__input {
+                border-bottom-color: $content-color;
+            }
+
+            .form__icon {
+                fill: $content-color;
+            }  
+        }
+    }
+
+    &__text {
+        position: absolute;
+        bottom: 17px;    
+        padding-left: 50px;
+        transition: bottom $trans-hover;
+    }
+
+    &__icon {
+        position: absolute; 
+        bottom: 15px;   
+        width: 30px;
+        height: 30px;
+        fill: $grey-color;
+        z-index: 1;
+        transition: $trans-hover;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        position: relative;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid $grey-color;
+        background: none; 
+        padding: 0 0 18px 50px;     
+        color: $text-color;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: border-bottom-color $trans-hover;
+        z-index: 1;
+        &:focus {
+            border-bottom-color: $content-color;
+            + .form__icon {
+                fill: $content-color;
+
+                &--textarea {
+                    bottom: 35px;
+
+                    @include phones {
+                        bottom: 15px;
+                    }
+                }
+            }
+            ~ .form__text {
+                bottom: 65px;
+        
+                &--textarea {
+                    bottom: 85px;
+                }
+            }
+        }
+        &.active {
+            border-bottom-color: $content-color;
+            + .form__icon {
+                fill: $content-color;
+
+                &--textarea {
+                    bottom: 35px;
+
+                    @include phones {
+                        bottom: 15px;
+                    }
+                }
+            }
+            ~ .form__text {
+                bottom: 65px;
+        
+                &--textarea {
+                    bottom: 85px;
+                }
+            }
+        }
+    }
+
+    &__textarea {
+        resize: vertical;
+    }
+
+    &__error {
+        position: absolute;
+        background-color: $danger-color;
+        padding: 5px 15px;
+        left: 50px;
+        bottom: -32px;
+        display: none;
+        z-index: 1;
+        &:before {
+            content: '';
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            top: -20px;
+            width: 0;
+            height: 0;
+            border: 9px solid transparent;
+            border-bottom: 16px solid $danger-color;
+        }
+        &.active {
+            display: block;
+            + .form__input {
+                border-bottom: 2px solid $danger-color;
+            } 
+            ~ .form__icon {
+                fill: $danger-color;
+            } 
+        }
+    }
+}

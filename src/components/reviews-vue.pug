@@ -1,0 +1,38 @@
+script(type="text/x-template")#reviews-container
+  section.reviews#reviews.js-section
+    .container.reviews__container
+      .reviews__header
+        h2.title.reviews__title Что обо мне говорят
+        .reviews__button
+          button.reviews__arrow(
+            :class="{ 'disabled': currentSlideIndex === 0 }"
+            @click.prevent="previous()" 
+            type="button" 
+            aria-label="следующий отзыв"
+          )
+            +icon("arrow-down", "arrow arrow--prev") 
+          button.reviews__arrow(
+            :class="{ 'disabled': currentSlideIndex === slidesLength - 1 }"
+            @click.prevent="next()" 
+            type="button" 
+            aria-label="предыдущий слайд"
+          )
+            +icon("arrow-down", "arrow arrow--next")   
+      .reviews__slider
+        flickity.reviews__list(ref="flickity" :options="flickityOptions" v-if="reviews.length > 0")
+          .reviews__item(v-for="(review, index) in reviews" :key="index")  
+            review(:review="review")
+
+script(type="text/x-template")#review
+  .review
+    .review__text.text 
+      p {{ review.text }}
+    .review__user
+      .review__avatar
+        img.review__photo(:src="review.photo")
+      .review__user_desc
+        .review__user_fio {{ review.author }}
+        .review__user_position.text {{ review.occ }}
+
+  
+              

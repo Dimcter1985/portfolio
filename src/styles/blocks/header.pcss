@@ -1,0 +1,29 @@
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    padding: 30px 0;
+
+    &__container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__menu {
+        @include tablets {
+            display: none;
+        }
+    }
+    &__socials {
+        @include phones {
+            display: none;
+        }
+    }
+    &__mobile-menu {
+        display: none;
+
+        @include tablets {
+            display: block;
+        }
+    }
+}

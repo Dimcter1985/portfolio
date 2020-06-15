@@ -1,0 +1,8 @@
+mixin socials(mod)
+    - var icons = ["insta", "vk", "github"]
+    - var link = ["https://www.instagram.com/?hl=ru", "https://vk.com/id69305540", "https://github.com/Dimcter1985" ]
+    ul.socials.socials--mobile.socials--footer
+        each item, index in icons
+            li(class="socials__item socials__item--" + mod) 
+                a.socials__link(href=`${link[index]}` target="_blank")
+                    +icon(item, "socials__icon")

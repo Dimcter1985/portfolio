@@ -1,0 +1,41 @@
+@mixin desktopHd() {
+  @media screen and (max-width: $bp-desktop-hd) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (max-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin desktopIpad() {
+  @media screen and (max-width: $bp-desktop-ipad) {
+    @content;
+  }
+}
+
+@mixin tablets() {
+  @media screen and (max-width: $bp-tablets) {
+    @content;
+  }
+}
+
+@mixin phones() {
+  @media screen and (max-width: $bp-phones) {
+    @content;
+  }
+}
+
+@mixin phonesLand() {
+  @media screen and (max-width: $bp-desktop) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin Iphone() {
+  @media screen and (max-width: $bp-iphone) {
+    @content;
+  }
+}

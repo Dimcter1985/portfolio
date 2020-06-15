@@ -1,0 +1,16 @@
+footer.footer
+    .container.footer__container
+        .footer__column_left
+            .footer__year &copy; 2020
+            .footer__name
+                .footer__fio дмитрий рыбников
+                .footer__desc.text Личный сайт <br> веб-разработчика
+        .footer__column_right
+            include nav.pug
+            .footer__content
+                .footer__content_left
+                    p.footer__text.text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    +socials("footer")
+                .footer__content_right
+                    p.footer__quote.text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    .footer__quote_author Martin Golding

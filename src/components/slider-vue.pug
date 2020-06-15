@@ -1,0 +1,78 @@
+script(type="text/x-template")#slider-container
+    .slider__wrapper 
+        display(
+            :works="works"
+            :currentWork="currentWork"
+            @slide="handleSlide"
+            :currentIndex='currentIndex'
+        )
+        info(
+            :currentWork="currentWork"
+            :currentIndex="currentIndex"
+        )
+        
+script(type="text/x-template")#slider-display
+    .slider__display
+        transition-group.slider__current-slide(name="fade" tag="div")
+            img.slider__image(
+                v-if="currentWork"
+                :src="currentWork.photo"
+                :key="currentWork.id" 
+                alt="скриншот страницы моего проекта"
+            )
+        preview(
+            :works="works"
+            :currentWork="currentWork"
+            :currentIndex='currentIndex'
+            @slide='handleSlide'
+        )
+        btns(
+            :worksLength='works.length'
+            :currentIndex='currentIndex'
+            @slide="$emit('slide', $event)"
+        )                 
+
+script(type="text/x-template")#slider-preview
+    .slider__preview-wrapper  
+        ul.slider__preview(:style='{transform: `translateX(-${translate}%)`}')
+            li.slider__item(
+                v-for='work, index in works'
+                :key='work.id'
+                @click='$emit("slide", index)' 
+                :class='{active: work.id === currentWork.id}'      
+            )
+                button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
+                    img(:src="work.photo" alt="миниатюра скриншота страницы моего проекта" class="slider__image")
+            
+script(type="text/x-template")#slider-button
+    .slider__button
+        button(
+                @click.prevent="$emit('slide', 'next')"
+                :disabled='currentIndex >= (worksLength - 1)'
+                type="button" 
+                aria-label="следующий слайд"
+            ).slider__button-arrow
+            +icon("arrow-down", "arrow arrow--next")                  
+        button(
+                @click.prevent="$emit('slide', 'prev')"
+                :disabled='currentIndex <= 0' 
+                type="button" 
+                aria-label="предыдущий слайд"
+            ).slider__button-arrow
+            +icon("arrow-down", "arrow arrow--prev")
+
+script(type="text/x-template")#slider-content
+    .slider__content
+        .slider__counter {{currentIndex+1}}       
+        .slider__desc
+            tags(:tags="tags")
+            h3.slider__subtitle {{ work.title }}
+            p.slider__text.text {{ work.description }}
+            a.slider__link(:href="work.link" target="_blank") Посмотреть сайт
+
+script(type="text/x-template")#slider-tags 
+    .slider__skills
+        .slider__item_skills.text(
+            v-for="(tag, index) in tags"
+            :key="index"
+        ) {{ tag }}               

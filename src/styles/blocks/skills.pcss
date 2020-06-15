@@ -1,0 +1,245 @@
+.skills {
+    background-image: url("../images/content/skills/background-skills.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    &:after {
+        content: "";
+        width: 682px;
+        height: 983px;
+        position: absolute;
+        bottom: -7%;
+        left: -1%;
+        background-image: url("../images/content/skills/hands.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 1;
+
+        @include desktop {
+            width: 460px;
+            height: 677px;
+            bottom: -6.5%;
+            left: -2%;
+        }
+
+        @include phonesLand {
+            width: 460px;
+            height: 677px;
+            bottom: -6.5%;
+            left: -2%;
+        } 
+
+        @include tablets {
+            transform: rotate(-90deg);
+            width: 310px;
+            height: 527px;
+            bottom: -108px; 
+            left: 24%; 
+        }
+
+        @include phones {
+            width: 280px;
+            height: 497px;
+            left: 17%;
+        }
+        
+        @include Iphone {
+            width: 200px;
+            height: 417px;
+        }
+    }
+
+    &__container {
+        padding: 150px 0 100px;
+
+        @include tablets {
+            padding: 112px 0 300px;
+        }
+
+        @include Iphone {
+            padding: 50px 0 200px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 50px;
+        font-size: 1.9rem;
+
+        @include tablets {
+            width: 250px;
+            text-align: center;
+            margin-bottom: 13px;
+        }
+
+        @include phones {
+            text-align: left;
+            font-size: 1.5rem;
+            margin-right: auto;
+        }
+    }
+
+    &__description {       
+        width: 586px;
+        line-height: 30px;
+        margin-bottom: 82px;
+        padding-left: 58px;
+
+        @include desktop {
+            padding-left: 71px;
+        }
+
+        @include tablets {
+            padding: 0 60px;
+            line-height: 25px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        @include phones {
+            width: 100%;
+            padding: 0;
+            text-align: left;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        left: 0;
+        top: 195px;
+        width: auto;
+        height: auto;
+    }
+
+    &__box{   
+        margin-bottom: 30px;
+
+        @include desktop {
+            margin-bottom: 12px;
+        }
+        
+        @include tablets {
+            margin: 0;
+        }
+
+        @include phones {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__box-container {
+        margin-right: 55px;
+        margin-left: auto;
+        z-index: 2;
+
+        @include tablets {
+            margin: 0 20px;
+        }
+
+        @include phones {
+            margin: 0;
+        }
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        margin-left: 20px;
+
+        @include tablets {
+            text-align: center;
+        }
+
+        @include phones {
+            margin-left: 0;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include tablets {
+            justify-content: center;
+        }
+
+        @include phones {
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        margin-right: 35px;
+
+        @include desktop {
+            margin-right: 12px;
+        }
+
+        @include phonesLand {
+            margin-right: 5px;
+        }
+        
+        @include phones {
+            margin-right: 0;
+        }
+
+        @include Iphone {
+            margin-right: -4px;
+        }
+    }
+
+    &__wrapper{
+        width: 170px;
+        height: 170px;
+        position: relative;
+
+        @include desktop {
+            width: 160px;
+            height: 160px;
+        }
+
+        @include phonesLand {
+            width: 140px;
+            height: 140px;
+        }
+
+        @include phones {
+            width: 140px;
+            height: 140px;
+        }
+    }
+
+    &__circle {
+        fill: transparent;
+        &-under {
+            stroke: $grey-color;
+            stroke-width: 1px;
+        }
+        &-above {
+            stroke-width: 5px;
+            stroke-dasharray: 251;
+            stroke-dashoffset: 100;
+            stroke-linecap: round;
+        }
+    } 
+
+    &__desc {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.1rem;
+        font-weight: 700;
+        opacity: 0.5;
+    }
+}
+
+
+
+
+
+
+
+

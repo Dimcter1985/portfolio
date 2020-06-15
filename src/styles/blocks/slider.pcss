@@ -1,0 +1,441 @@
+.slider {
+    &__container {
+        padding: 200px 0;
+        @include desktop {
+            padding: 142px 26px 154px;
+        }
+
+        @include tablets {
+            padding: 115px 20px;
+        }
+        
+        @include phones {
+            padding: 115px 0;
+        }
+
+        @include Iphone {
+            padding: 50px 0;
+        }
+    }
+    
+    &__title {       
+        color: $grey-color;
+        margin-bottom: 90px;
+        margin-right: auto;
+
+        @include desktop {
+            margin-bottom: 60px;
+        }
+
+        @include phonesLand {
+            margin-bottom: 60px;
+        } 
+        
+        @include tablets {
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+        
+        @include phones {
+            margin-right: 0;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        @include tablets {
+            display: block;;
+        }
+    }
+
+    &__display {
+        flex-basis: 66%;
+        position: relative;
+        height: 550px;
+
+        @include desktop {
+            height: 400px;
+        }
+
+        @include tablets {
+            margin-bottom: 65px;
+        }
+
+        @include phones {
+            margin-bottom: 30px;
+            height: 200px;
+        }
+        
+        @include phonesLand {
+            flex-basis: 60%;
+            margin-bottom: 50px;
+        } 
+    }
+
+    &__content {
+        flex-basis: 34%;
+        display: flex;
+        padding-left: 118px;
+        position: relative;
+        color: $black-color;
+
+        @include tablets {
+            padding-left: 0;
+        }
+        
+        @include phonesLand {
+            flex-basis: 40%;
+        } 
+    }
+
+    &__preview-wrapper {
+        position: absolute;
+        top: 388px;
+        overflow: hidden;
+        width: 350px;
+        height: 104px;
+        right: 0;
+
+        @include desktop {
+            top: 220px;
+            width: 300px;
+        }
+        
+        @include phonesLand {
+            top: 220px;
+        }
+
+        @include tablets {
+            right: 52px;
+            top: 250px;
+        }
+
+        @include phones {
+            display: none;
+        } 
+    }
+
+    &__preview-btn {
+        height: 100%;
+    }
+
+    &__button {
+        position: absolute;
+        right: -52px;
+        bottom: 58px;
+        z-index: 1;
+        &-arrow {
+            width: 52px;
+            height: 52px;
+            background-color: $dark-grey-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color $trans-hover; 
+            &:hover {
+                background-color: $content-color;
+                .arrow {
+                    fill: $black-color;
+                }
+                &:disabled {
+                    background-color: $dark-grey-color;
+                    cursor: auto;
+                }
+            }
+
+            &:disabled {
+                .arrow {
+                    fill: $black-color;
+                }
+            }
+            
+
+            @include tablets {
+                width: 52px;
+                height: 52px;
+            } 
+
+            @include phonesLand {
+                width: 52px;
+                height: 52px;
+            } 
+        }
+        
+        @include desktop {
+            right: -52px;
+            bottom: 81px;
+        }
+
+        @include phonesLand {
+            right: -51px;
+            bottom: 76px;
+        } 
+
+        @include tablets {
+            right: 0;
+            bottom: 46px;
+        }
+        
+        @include phones {
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &__preview {
+        display: flex;
+        position: absolute;
+        height: 104px;
+        transition: $trans-slider; 
+    }
+
+    &__desc {
+        @include tablets {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+        
+        @include phonesLand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        } 
+    }
+    
+    &__item {
+        position: relative;
+        width: 176px;
+        transition: $trans-hover; 
+        &.active::after {
+            outline: 3px solid $content-color;
+            outline-offset: -3px;
+            opacity: 1;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 0.2s ease;
+          }
+        &:hover::after {
+            background-color: rgba($content-color, 0.3);
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        @include tablets {
+           width: 151px;
+        }
+
+        @include phonesLand {
+            width: 150px;
+        } 
+    } 
+
+    &__skills {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 37px;
+
+        @include tablets {
+            margin-bottom: 15px;
+        }  
+    }
+
+    &__item_skills {     
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        opacity: 1;
+        padding: 13px 20px;
+        background-color: $light-grey-color;
+        border-radius: 25%/50%;
+        margin-right: 17px;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 48px;
+        margin-bottom: 29px;
+
+        @include tablets {
+            margin-bottom: 15px;
+        }
+        
+        @include phones {
+            margin-bottom: 15px;
+            width: 100%;
+            line-height: 38px;
+        }
+
+        @include phonesLand {
+            margin-right: 0;
+        } 
+    }
+
+    &__text {  
+        opacity: 0.7;   
+        line-height: 1.9rem;
+        margin-bottom: 36px;
+
+        @include tablets {
+            padding: 0 115px;
+            margin-bottom: 16px;
+        }
+        
+        @include tablets {
+            padding: 0;
+            margin: 0 37px 16px;
+        }
+
+        @include phones {
+            text-align: left;
+            margin: 0 10px 20px;
+        }
+    } 
+
+    &__counter {       
+        color: $grey-color;
+        opacity: 0.3;
+        font-size: 25rem;
+        font-weight: 800;
+        position: absolute;
+        left: -65px;
+        top: -51px;
+        z-index: -1;
+
+        @include desktop {
+            font-size: 18rem;
+            left: -38px;
+            top: -76px;
+        }
+
+        @include phonesLand {
+            font-size: 18rem;
+            left: -38px;
+            top: -76px;
+        } 
+        
+        @include tablets {
+            display: none;
+        }
+    }
+
+    &__link {
+        color: $links-color;
+        font-size: 1.1rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 35px;
+        width: 57%;
+        border-bottom: 1px solid transparent;
+        transition: $trans-hover;  
+        &:hover { 
+            border-bottom: 1px solid $links-color; 
+            transition: $trans-hover;   
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            background: svg-load('link.svg', fill=$links-color, width=100%, height=100%);
+        }
+
+        @include desktop {
+            width: 65%;
+        }
+
+        @include phonesLand {
+            width: 65%;
+        } 
+        
+        @include tablets {
+            width: 30%;
+        }  
+
+        @include phones {
+            width: 64%;
+            margin-right: auto;
+        }
+    }
+
+    &__main {
+        height: 550px;
+
+        @include desktop {
+            height: 353px;
+        }
+
+        @include phonesLand {
+            height: 353px;
+        } 
+        
+        @include tablets {
+            height: 353px;
+            width: 625px;
+        }
+        
+        @include phones {
+            margin: 0 -27px;
+            width: auto;
+            height: auto;
+        }
+    }
+    
+    &__current-slide {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+.fade {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity 0.3s ease;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  
+    &-enter,
+    &-leave-to {
+      opacity: 0;
+    }
+}
+
