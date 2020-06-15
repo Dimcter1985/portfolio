@@ -36,7 +36,7 @@
         }
         
         @include phones {
-            text-align: left;
+            text-align: center;
             margin-right: 0;
             margin-bottom: 30px;
         }
@@ -161,6 +161,10 @@
         z-index: 1;
         width: 62.5rem;
         overflow: hidden;
+
+        @include desktopIpad {
+            width: 100%;
+        }
     }
 
     &__item {
@@ -168,6 +172,14 @@
         padding-left: 124px;
         margin-right: 65px;
         width: 440px;
+
+        
+        @include desktopIpad {
+            width: 50%;
+            padding-left: 0;
+            margin-right: 15px;
+        }
+
         
         &:before {
             content: "";
@@ -178,35 +190,9 @@
             background: svg-load('quote.svg', fill= $dark-grey-color, width=100%, height=100%);
             background-repeat: no-repeat;
 
-            @include tablets {
-                width: 45px;
-                height: 33px;
-                left: 0;
+            @include desktopIpad {
+                display: none;
             }
-
-            @include phones {
-                width: 35px;
-                height: 23px;
-                left: -25px;
-            }
-        }
-
-        @include desktop {
-            margin-right: 35px;
-        }
-
-        @include tablets {
-            padding-left: 40px;
-            margin-right: 40px;
-            width: 320px;
-        }
-        
-        @include phones {
-            padding: 0;
-        }
-
-        @include Iphone {
-            width: 280px;
         }
     }
 }
@@ -232,6 +218,10 @@
         border-radius: 50%;
         overflow: hidden;
         margin-right: 25px;
+
+        @include phones {
+            display: none;
+        }
     }
 
     &__photo {
