@@ -13,7 +13,7 @@
 * Git
 * Yarn
 
-## [Посмотреть сайт](https://dimcter1985.github.io/portfolio/dist/)
+## Посмотреть как выглядит сайт можно [тут](http://portfolio.dimcter1985.tmweb.ru/) или тут [https://dimcter1985.github.io/portfolio/dist/]
 ![portfolio](src/images/content/screenshot.jpg)
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/), а так же
