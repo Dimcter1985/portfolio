@@ -23,8 +23,8 @@ const preview = {
         translate() {
             const step = 100 / this.works.length;
             if (this.currentIndex >= this.works.length - 1) return;
-            else if (this.currentIndex <= 1) return 0;
-            else if (this.currentIndex >= 1) return step * (this.currentIndex);
+            else if (this.currentIndex <= 0) return 0;
+            else if (this.currentIndex >= 0) return step * (this.currentIndex);
         }
     }
 };
